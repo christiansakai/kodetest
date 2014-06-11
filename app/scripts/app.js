@@ -4,13 +4,14 @@ angular.module('codepadApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'firebase'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/main',
-        controller: 'MainCtrl'
+        templateUrl: 'partials/switch',
+        controller: 'SwitchCtrl'
       })
       .when('/login', {
         templateUrl: 'partials/login',
@@ -24,6 +25,11 @@ angular.module('codepadApp', [
         templateUrl: 'partials/settings',
         controller: 'SettingsCtrl',
         authenticate: true
+      })
+      .when('/:path_name', {
+        templateUrl: 'partials/main',
+        controller: 'MainCtrl',
+        reloadOnSearch: false
       })
       .otherwise({
         redirectTo: '/'
