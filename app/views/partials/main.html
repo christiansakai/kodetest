@@ -1,17 +1,16 @@
-<div ng-include="'partials/navbar'"></div>
+<!-- <div ng-include="'partials/navbar'"></div> -->
 
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 code-column" id="pad1" ng-model="pad1Content">
-  <p class="column-heading">TEST</p>
+  <p class="column-heading">Test</p>
 </div>
 
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 code-column" id="pad2">
-  <p class="column-heading">JAVASCRIPT</p>
+  <p class="column-heading">JavaScript</p>
 </div>
 
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 code-column">
-  <p class="column-heading">OUTPUT</p>
-  <a ng-click="run()">Run</a>
-  <iframe ng-src="{{iframeUrl}}">
+  <p class="column-heading"><a id="run-test-button" ng-click="run()">Run Test</a></p>
+  <iframe ng-src="{{iframeUrl}}" class="test-iframe">
 </div>
 
 <div class="footer">

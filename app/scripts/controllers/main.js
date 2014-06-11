@@ -12,7 +12,8 @@ angular.module('codepadApp')
     var codeMirror = CodeMirror(document.getElementById('pad1'),
       { lineWrapping: true,
         lineNumbers: true,
-        mode: 'javascript'
+        mode: 'javascript',
+        theme: 'base16-light'
     });
     var pad1 = Firepad.fromCodeMirror(pad1Ref, codeMirror,
         { richTextShortcuts: false,
@@ -25,7 +26,9 @@ angular.module('codepadApp')
     var codeMirror = CodeMirror(document.getElementById('pad2'),
       { lineWrapping: true,
         lineNumbers: true,
-        mode: 'javascript'
+        // TODO: Look into what htmlmixed is
+        mode: 'javascript',
+        theme: 'base16-light'
     });
     var pad2 = Firepad.fromCodeMirror(pad2Ref, codeMirror,
         { richTextShortcuts: false,
