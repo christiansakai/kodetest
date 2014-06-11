@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('codepadApp')
-  .controller('MainCtrl', function ($scope, $routeParams, $http, FIREBASEURI, $firebase) {
+  .controller('MainCtrl', function ($scope, $routeParams, $http, FIREBASEURI, $firebase, $q) {
 
     $scope.thisPagePath = $routeParams.path_name;
+    $scope.pad1Text = '';
+    $scope.pad2Text = '';
 
     var roomRef = new Firebase(FIREBASEURI + 'codepad/environment/' + $scope.thisPagePath);
     // Pad 1 Code
@@ -34,20 +36,30 @@ angular.module('codepadApp')
         { richTextShortcuts: false,
           richTextToolbar: false
         });
+    // TODO: Change these callbacks with
     $scope.run = function() {
-      pad1Ref.child('fullcode').set(pad1.getText());
-      pad2Ref.child('fullcode').set(pad2.getText());
-      roomRef.child('iframeUrl').set("/runner/" + $scope.thisPagePath + "/" + (new Date()).getTime());
-      // $http.post($scope.thisPagePath, {
-      //   pad1: pad1.getText(),
-      //   pad2: pad2.getText()
-      // }).success(function(data) {
-      //   $scope.iframeUrl = data.iframeUrl;
-      // });
+      pad1Ref.child('fullcode').set(pad1.getText(), function(){
+        pad2Ref.child('fullcode').set(pad2.getText(), function(){
+          roomRef.child('iframeUrl').set("/runner/" + $scope.thisPagePath + "/" + (new Date()).getTime(), function(){
+            $scope.pad1Text = pad1.getText();
+            $scope.pad2Text = pad2.getText();
+          });
+        });
+      });
+
+
+
     };
+
     roomRef.child('iframeUrl').on('value', function(newUrl) {
       console.log(newUrl);
       $scope.iframeUrl = newUrl.val();
+      $scope.$apply();
     });
 
   });
+
+
+
+
+
