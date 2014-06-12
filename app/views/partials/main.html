@@ -2,7 +2,9 @@
 
 <!-- TODO: Fix imDraggable directive -->
 <div imDraggable class="col-xs-4 col-sm-4 col-md-4 col-lg-4 code-column" id="pad1" ng-model="pad1Content">
-  <p class="column-heading">Test</p>
+  <p class="column-heading">Test
+    <select class="pull-right" ng-model="activeTestType" ng-options="type for type in testTypes"></select>
+  </p>
 </div>
 
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 code-column" id="pad2">

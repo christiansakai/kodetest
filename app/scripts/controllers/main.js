@@ -6,6 +6,8 @@ angular.module('codepadApp')
     $scope.thisPagePath = $routeParams.path_name;
     $scope.pad1Text = '';
     $scope.pad2Text = '';
+    $scope.testTypes = ['jasmine', 'mocha'];
+    $scope.activeTestType = 'jasmine';
 
     var roomRef = new Firebase(FIREBASEURI + 'codepad/environment/' + $scope.thisPagePath);
 
@@ -42,7 +44,7 @@ angular.module('codepadApp')
     $scope.run = function() {
       pad1Ref.child('fullcode').set(pad1.getText(), function(){
         pad2Ref.child('fullcode').set(pad2.getText(), function(){
-          roomRef.child('iframeUrl').set('/runner/' + $scope.thisPagePath + '/' + (new Date()).getTime(), function(){
+          roomRef.child('iframeUrl').set('/runner/' + $scope.activeTestType + '/' + $scope.thisPagePath + '/' + (new Date()).getTime(), function(){
             $scope.pad1Text = pad1.getText();
             $scope.pad2Text = pad2.getText();
           });
