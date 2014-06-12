@@ -1,6 +1,8 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'font-awesome/scss/font-awesome';
 
 /* Note: CodeMirror applies its own styles which can be customized in the same way.
    To apply a background to the entire editor, we need to also apply it to CodeMirror. */
@@ -114,6 +116,12 @@ body {
   text-decoration: underline;
   cursor: pointer;
   cursor: hand;
+}
+
+#about-question-icon {
+  cursor: pointer;
+  cursor: hand;
+  color:grey;
 }
 
 /* Custom, iPhone Retina */

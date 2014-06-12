@@ -26,6 +26,10 @@ angular.module('codepadApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
+      // .when('/addexercism', {
+      //   templateUrl: 'partials/addexercism',
+      //   controller: 'ExercismCtrl'
+      // })
       .when('/:path_name', {
         templateUrl: 'partials/main',
         controller: 'MainCtrl',

@@ -10,12 +10,13 @@
 </div>
 
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 code-column">
-  <p class="column-heading"><a id="run-test-button" ng-click="run()">Run Test</a></p>
+  <p class="column-heading"><a id="run-test-button" ng-click="run()">Run Test</a><i class="fa fa-question pull-right" id="about-question-icon"></i></p>
   <iframe ng-src="{{iframeUrl}}" class="test-iframe">
 </div>
 
 <div class="footer">
   <p>♥ from the Yeoman team</p>
 </div>
-
-{{pad1Content}}
+<script>
+{{exercismData}}
+</script>
