@@ -36,7 +36,7 @@ angular.module('codepadApp')
         { richTextShortcuts: false,
           richTextToolbar: false
         });
-    // TODO: Change these callbacks with
+    // TODO: Change these callbacks to promises
     $scope.run = function() {
       pad1Ref.child('fullcode').set(pad1.getText(), function(){
         pad2Ref.child('fullcode').set(pad2.getText(), function(){
