@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('codepadApp')
-  .controller('MainCtrl', function ($scope, $routeParams, $http, FIREBASEURI, $firebase, exercisms) {
+  .controller('MainCtrl', function ($scope, $routeParams, $http, $firebase, exercisms, FIREBASEURI) {
 
     $scope.thisPagePath = $routeParams.path_name;
     $scope.testTypes = ['jasmine', 'mocha'];

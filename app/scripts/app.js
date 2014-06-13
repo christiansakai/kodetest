@@ -17,6 +17,10 @@ angular.module('codepadApp', [
         templateUrl: 'partials/login',
         controller: 'LoginCtrl'
       })
+      .when('/about', {
+        templateUrl: 'partials/about',
+        controller: 'AboutCtrl'
+      })
       .when('/signup', {
         templateUrl: 'partials/signup',
         controller: 'SignupCtrl'
