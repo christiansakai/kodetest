@@ -1,13 +1,14 @@
 <!-- <div ng-include="'partials/navbar'"></div> -->
 
 <!-- TODO: Fix imDraggable directive -->
-<div imDraggable class="col-xs-4 col-sm-4 col-md-4 col-lg-4 code-column" id="pad1" ng-model="pad1Content">
+<div imDraggable class="col-xs-4 col-sm-4 col-md-4 col-lg-4 code-column" id="pad1" ng-model="pad1Text">
   <p class="column-heading">Test
     <select class="pull-right" ng-model="activeTestType" ng-options="type for type in testTypes"></select>
+    <select class="pull-right" ng-model="currentExercism" ng-options="exercism for exercism in exercisms"></select>
   </p>
 </div>
 
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 code-column" id="pad2">
+<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 code-column" id="pad2" ng-model="pad2Text">
   <p class="column-heading">JavaScript</p>
 </div>
 
