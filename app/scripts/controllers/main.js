@@ -57,7 +57,6 @@ angular.module('codepadApp')
     });
 
     pad1.on('ready', function(){
-      console.log('pad1 is ready');
       $scope.$watch('currentExercism', function(newVal, oldVal){
         $http.get('/getExercism/' + newVal).success(function(exercism_data){
           pad1Ref.child('fullcode').set(exercism_data, function(){
@@ -67,7 +66,7 @@ angular.module('codepadApp')
           });
         });
       });
-    })
+    });
 
     roomRef.child('currentExercism').on('value', function(newExercism) {
       $scope.currentExercism = newExercism.val();
@@ -77,12 +76,6 @@ angular.module('codepadApp')
     roomRef.child('testType').on('value', function(newTestType) {
       $scope.activeTestType = newTestType.val();
       $scope.$apply();
-    });
-
-    $scope.$watch('activeTestType', function(newVal, oldVal){
-      if(newVal !== oldVal){
-        roomRef.child('testType').set($scope.activeTestType);
-      };
     });
 
   });
