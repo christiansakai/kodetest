@@ -50,12 +50,6 @@ angular.module('codepadApp')
       });
     };
 
-    roomRef.child('iframeUrl').on('value', function(newUrl) {
-      console.log(newUrl);
-      $scope.iframeUrl = newUrl.val();
-      $scope.$apply();
-    });
-
     pad1.on('ready', function(){
       $scope.$watch('currentExercism', function(newVal, oldVal){
         $http.get('/getExercism/' + newVal).success(function(exercism_data){
@@ -66,6 +60,12 @@ angular.module('codepadApp')
           });
         });
       });
+    });
+
+    roomRef.child('iframeUrl').on('value', function(newUrl) {
+      console.log(newUrl);
+      $scope.iframeUrl = newUrl.val();
+      $scope.$apply();
     });
 
     roomRef.child('currentExercism').on('value', function(newExercism) {
