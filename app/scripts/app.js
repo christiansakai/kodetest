@@ -17,7 +17,7 @@ angular.module('codepadApp', [
         templateUrl: 'partials/login',
         controller: 'LoginCtrl'
       })
-      .when('/about', {
+      .when('/:path_back_to_home/about', {
         templateUrl: 'partials/about',
         controller: 'AboutCtrl'
       })

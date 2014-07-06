@@ -2,7 +2,9 @@
 
 angular.module('codepadApp')
   .value('exercisms',
-    ['bob',
+    ['custom',
+    'instructions',
+    'bob',
     'word-count',
     'anagram',
     'beer-song',

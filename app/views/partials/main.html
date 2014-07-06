@@ -1,19 +1,26 @@
 <!-- <div ng-include="'partials/navbar'"></div> -->
 
 <!-- TODO: Fix imDraggable directive -->
-<div imDraggable class="col-xs-4 col-sm-4 col-md-4 col-lg-4 code-column" id="pad1" ng-model="pad1Text">
+<div imDraggable class="col-xs-12 col-sm-6 col-md-6 col-lg-4 code-column" id="pad1" ng-model="pad1Text">
   <p class="column-heading">Test
+    <a ng-href="/{{thisPagePath}}/about" ><i class="fa fa-info pull-right about-question-icon-test" id="about-question-icon"></i></a>
     <select class="pull-right" ng-model="activeTestType" ng-options="type for type in testTypes"></select>
-    <select class="pull-right" ng-model="currentExercism" ng-options="exercism for exercism in exercisms"></select>
+    <select class="pull-right" ng-model="currentExercism" ng-options="option for option in menuOptions"></select>
+    <img src="images/exercism.png" ng-model="showExercisms" ng-click="showExercisms = !showExercisms" class="pull-right" alt="Exercism Logo" id="exercism-logo" width="20px" height="100%" ng-show="showExercisms"/>
+    <img src="images/exercism_edited.png" ng-model="showExercisms" ng-click="showExercisms = !showExercisms" class="pull-right" alt="Exercism Logo" id="exercism-logo" width="20px" height="100%" ng-show="!showExercisms"/>
   </p>
 </div>
 
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 code-column" id="pad2" ng-model="pad2Text">
-  <p class="column-heading">JavaScript</p>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 code-column" id="pad2" ng-model="pad2Text">
+  <p class="column-heading">JavaScript
+  <a ng-href="/{{thisPagePath}}/about" ><i class="fa fa-info pull-right about-question-icon-javascript" id="about-question-icon"></i></a>
+  </p>
 </div>
 
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 code-column">
-  <p class="column-heading"><a id="run-test-button" ng-click="run()">Run Test</a><a href="/about"><i class="fa fa-question pull-right" id="about-question-icon"></i></a></p>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 code-column">
+  <p class="column-heading"><a id="run-test-button" ng-click="run()">Run Test</a>
+    <a ng-href="/{{thisPagePath}}/about" ><i class="fa fa-info pull-right about-question-icon-run-test" id="about-question-icon"></i></a>
+  </p>
   <iframe ng-src="{{iframeUrl}}" class="test-iframe">
 </div>
 

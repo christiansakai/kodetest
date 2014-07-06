@@ -4,6 +4,10 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 @import 'font-awesome/scss/font-awesome';
 
+body {
+  background-color: #f5f5f5;
+}
+
 /* Note: CodeMirror applies its own styles which can be customized in the same way.
    To apply a background to the entire editor, we need to also apply it to CodeMirror. */
 .CodeMirror {
@@ -128,11 +132,38 @@ body {
   width:18px;
   padding-top:0px;
   margin-top:0px;
-  margin-right: 10px;
+  margin-right: 10px;;
+  fill:   green;
+  :hover{
+    background-color:green;
+  }
 }
 
 #mocha {
   margin: 60px 10px;
+}
+
+#about-text {
+  background-color: #f5f5f5;
+  font-size:3em;
+  width:100%;
+  height:100%;
+  margin-top:10%;
+  h1, h3, h4, p{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    letter-spacing: 1px;
+    margin-top:0px;
+  }
+  h3{
+    font-style:italic;
+  }
+  #about-container{
+    max-width:700px;
+    margin-top:10%;
+    position:relative;
+    margin:0 auto;
+  }
 }
 
 // Page Transitions Below
@@ -193,7 +224,13 @@ body {
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
+  .code-column{
+    padding-top:30px;
+  }
 
+  .about-question-icon-javascript, .about-question-icon-run-test{
+    display:none;
+  }
 }
 
 /* Extra Small Devices, Phones */
@@ -222,6 +259,13 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+
+  .about-question-icon-test, .about-question-icon-run-test{
+    display:none;
+  }
+  .about-question-icon-javascript{
+    display:inline-block;
+  }
 }
 
 /* Medium Devices, Desktops */
@@ -231,5 +275,10 @@ body {
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
-
+  .about-question-icon-test, .about-question-icon-javascript{
+    display:none;
+  }
+  .about-question-icon-run-test{
+    display:inline-block;
+  }
 }
