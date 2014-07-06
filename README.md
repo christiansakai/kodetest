@@ -1,6 +1,6 @@
 Kodetest
 ========
-Code & run JavaScript tests collaboratively in real-time
+Collaborate to code & run JavaScript tests in the web browser in real-time.
 
 Overview
 ----
