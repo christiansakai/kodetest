@@ -15,7 +15,7 @@ Main Technologies Used
 
 Screenshots
 ----
-coming soon
+![Kodetest Screenshot](http://img855.imageshack.us/img855/161/uezm.png)
 
 Challenges
 ----
